@@ -1,6 +1,7 @@
 from flask import Flask, jsonify, request
 from flask_cors import CORS
 import uuid
+import os
 
 app = Flask(__name__)
 
@@ -13,7 +14,6 @@ resumes = {}
 # HOME
 @app.route("/")
 def home():
-
     return jsonify({
         "message": "AI Resume Creator Backend is Running!"
     })
@@ -26,7 +26,6 @@ def save_resume():
     data = request.get_json()
 
     if not data:
-
         return jsonify({
             "success": False,
             "message": "No resume data received"
@@ -38,9 +37,9 @@ def save_resume():
     # Store resume
     resumes[resume_id] = data
 
-    # Create share link
+    # Create public share link
     share_link = (
-        "http://127.0.0.1:5000/resume/"
+        "https://ai-resume-creator-production-b802.up.railway.app/resume/"
         + resume_id
     )
 
@@ -57,7 +56,6 @@ def save_resume():
 def view_resume(resume_id):
 
     if resume_id not in resumes:
-
         return jsonify({
             "success": False,
             "message": "Resume not found"
@@ -72,4 +70,9 @@ def view_resume(resume_id):
 # RUN SERVER
 if __name__ == "__main__":
 
-    app.run(debug=True)
+    port = int(os.environ.get("PORT", 5000))
+
+    app.run(
+        host="0.0.0.0",
+        port=port
+    )
