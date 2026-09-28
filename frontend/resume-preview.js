@@ -1916,10 +1916,7 @@ if (shareResumeBtn) {
                         shareLink
                     );
 
-                    alert(
-                        "Resume link copied!\n\n" +
-                        shareLink
-                    );
+                    prompt("Copy this resume link:", shareLink);
 
                 } else {
 
