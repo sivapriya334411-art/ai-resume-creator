@@ -1,0 +1,499 @@
+/* =========================================
+   AI RESUME CREATOR
+   RESUME BUILDER JAVASCRIPT
+========================================= */
+
+console.log("RESUME BUILDER JS LOADED");
+
+
+/* =========================================
+   HELPER FUNCTION
+========================================= */
+
+function getValue(id) {
+
+    const element = document.getElementById(id);
+
+    if (!element) {
+        return "";
+    }
+
+    return element.value.trim();
+}
+
+
+/* =========================================
+   GENERATE BUTTON
+========================================= */
+
+const generateButton =
+    document.getElementById("generateResume");
+
+
+if (generateButton) {
+
+    generateButton.addEventListener("click", function () {
+
+        console.log("Generate Resume button clicked");
+
+
+        /* =====================================
+           REQUIRED FIELDS
+        ===================================== */
+
+        const fullName = getValue("fullName");
+        const email = getValue("email");
+
+
+        if (fullName === "") {
+
+            alert("Please enter your full name.");
+
+            document.getElementById("fullName").focus();
+
+            return;
+        }
+
+
+        if (email === "") {
+
+            alert("Please enter your email address.");
+
+            document.getElementById("email").focus();
+
+            return;
+        }
+
+
+        /* =====================================
+           EMAIL VALIDATION
+        ===================================== */
+
+        const emailPattern =
+            /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+
+        if (!emailPattern.test(email)) {
+
+            alert("Please enter a valid email address.");
+
+            document.getElementById("email").focus();
+
+            return;
+        }
+
+
+        /* =====================================
+           SELECTED TEMPLATE
+        ===================================== */
+
+        const selectedTemplate =
+            document.querySelector(
+                'input[name="resumeTemplate"]:checked'
+            );
+
+
+        const template =
+            selectedTemplate
+                ? selectedTemplate.value
+                : "classic";
+
+
+        /* =====================================
+           SELECTED LANGUAGES
+        ===================================== */
+
+        const languageCheckboxes =
+            document.querySelectorAll(
+                '.language-options input[type="checkbox"]'
+            );
+
+
+        const selectedLanguages = [];
+
+
+        languageCheckboxes.forEach(function (checkbox) {
+
+            if (checkbox.checked) {
+
+                selectedLanguages.push(
+                    checkbox.value
+                );
+
+            }
+
+        });
+
+
+        /* =====================================
+           RESUME DATA
+        ===================================== */
+
+        const resumeData = {
+
+            /* Personal */
+
+            fullName:
+                getValue("fullName"),
+
+            jobTitle:
+                getValue("jobTitle"),
+
+            email:
+                getValue("email"),
+
+            phone:
+                getValue("phone"),
+
+            location:
+                getValue("location"),
+
+
+            /* Summary */
+
+            summary:
+                getValue("summary"),
+
+
+            /* Education */
+
+            degree:
+                getValue("degree"),
+
+            department:
+                getValue("department"),
+
+            college:
+                getValue("college"),
+
+            cgpa:
+                getValue("cgpa"),
+
+            startYear:
+                getValue("startYear"),
+
+            endYear:
+                getValue("endYear"),
+
+
+            /* Skills */
+
+            skills:
+                getValue("skills"),
+
+
+            /* Project */
+
+            projectName:
+                getValue("projectName"),
+
+            projectTech:
+                getValue("projectTech"),
+
+            projectDescription:
+                getValue("projectDescription"),
+
+
+            /* Certification */
+
+            certification:
+                getValue("certification"),
+
+            certOrganization:
+                getValue("certOrganization"),
+
+
+            /* Achievements */
+
+            achievements:
+                getValue("achievements"),
+
+
+            /* Social */
+
+            linkedin:
+                getValue("linkedin"),
+
+            github:
+                getValue("github"),
+
+            portfolio:
+                getValue("portfolio"),
+
+
+            /* Resume Language */
+
+            resumeLanguage:
+                document.getElementById("resumeLanguage")
+                    ? document.getElementById("resumeLanguage").value
+                    : "English",
+
+
+            /* Selected Languages */
+
+            languages:
+                selectedLanguages,
+
+
+            /* Selected Template */
+
+            template:
+                template,
+
+
+            /* Profile Photo */
+
+            profilePhoto:
+                ""
+
+        };
+
+
+        /* =====================================
+           PROFILE PHOTO
+        ===================================== */
+
+        const photoInput =
+            document.getElementById("profilePhoto");
+
+
+        if (
+            photoInput &&
+            photoInput.files &&
+            photoInput.files.length > 0
+        ) {
+
+            const file =
+                photoInput.files[0];
+
+
+            /* Check image type */
+
+            if (!file.type.startsWith("image/")) {
+
+                alert("Please select a valid image file.");
+
+                return;
+            }
+
+
+            /* Compress photo before saving */
+
+            compressImage(
+                file,
+                function (compressedImage) {
+
+                    resumeData.profilePhoto =
+                        compressedImage;
+
+
+                    saveAndOpenPreview(
+                        resumeData
+                    );
+
+                }
+            );
+
+        }
+
+        else {
+
+            /* No photo */
+
+            saveAndOpenPreview(
+                resumeData
+            );
+
+        }
+
+    });
+
+}
+
+
+/* =========================================
+   COMPRESS PROFILE PHOTO
+========================================= */
+
+function compressImage(file, callback) {
+
+    const reader =
+        new FileReader();
+
+
+    reader.onload = function (event) {
+
+        const image =
+            new Image();
+
+
+        image.onload = function () {
+
+            const canvas =
+                document.createElement("canvas");
+
+
+            const context =
+                canvas.getContext("2d");
+
+
+            /* Maximum image size */
+
+            const maxWidth = 500;
+            const maxHeight = 500;
+
+
+            let width =
+                image.width;
+
+            let height =
+                image.height;
+
+
+            /* Resize width */
+
+            if (width > maxWidth) {
+
+                height =
+                    height * (maxWidth / width);
+
+                width =
+                    maxWidth;
+            }
+
+
+            /* Resize height */
+
+            if (height > maxHeight) {
+
+                width =
+                    width * (maxHeight / height);
+
+                height =
+                    maxHeight;
+            }
+
+
+            canvas.width =
+                width;
+
+            canvas.height =
+                height;
+
+
+            context.drawImage(
+                image,
+                0,
+                0,
+                width,
+                height
+            );
+
+
+            /*
+                JPEG compression
+
+                0.7 = good quality
+                + smaller file size
+            */
+
+            const compressedImage =
+                canvas.toDataURL(
+                    "image/jpeg",
+                    0.7
+                );
+
+
+            callback(
+                compressedImage
+            );
+
+        };
+
+
+        image.src =
+            event.target.result;
+
+    };
+
+
+    reader.readAsDataURL(file);
+
+}
+
+
+/* =========================================
+   SAVE RESUME DATA
+========================================= */
+
+function saveAndOpenPreview(resumeData) {
+
+    try {
+
+        localStorage.setItem(
+            "resumeData",
+            JSON.stringify(resumeData)
+        );
+
+
+        console.log(
+            "Resume Data Saved:",
+            resumeData
+        );
+
+
+        alert(
+            "Resume information saved successfully!"
+        );
+
+
+        /* =====================================
+           OPEN RESUME PREVIEW
+        ===================================== */
+
+        window.location.href =
+            "resume-preview.html";
+
+
+    }
+
+    catch (error) {
+
+        console.error(
+            "Error while saving resume:",
+            error
+        );
+
+
+        /*
+            If localStorage becomes full,
+            remove old resume data and retry
+        */
+
+        if (
+            error.name ===
+            "QuotaExceededError"
+        ) {
+
+            alert(
+                "Storage is full. Old resume data will be cleared. Please click Create Resume again."
+            );
+
+
+            localStorage.removeItem(
+                "resumeData"
+            );
+
+        }
+
+        else {
+
+            alert(
+                "Something went wrong while saving your resume."
+            );
+
+        }
+
+    }
+
+}

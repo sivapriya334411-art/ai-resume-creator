@@ -1,0 +1,1053 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>AI Resume Creator - Resume Builder</title>
+
+    <!-- Font Awesome -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
+
+    <!-- Resume Builder CSS -->
+    <link
+        rel="stylesheet"
+        href="resume-builder.css"
+    >
+
+</head>
+
+
+<body>
+
+
+<!-- =========================================
+     HEADER
+========================================= -->
+
+<header class="builder-header">
+
+    <div class="brand">
+
+        <i class="fa-solid fa-file-lines"></i>
+
+        <span>
+            AI Resume Creator
+        </span>
+
+    </div>
+
+
+    <a
+        href="dashboard.html"
+        class="dashboard-link"
+    >
+
+        <i class="fa-solid fa-arrow-left"></i>
+
+        Dashboard
+
+    </a>
+
+</header>
+
+
+
+<!-- =========================================
+     MAIN
+========================================= -->
+
+<main class="builder-container">
+
+
+    <!-- PAGE TITLE -->
+
+    <div class="page-title">
+
+        <h1>
+            Create Your Resume
+        </h1>
+
+        <p>
+            Enter your details and create a professional resume.
+        </p>
+
+    </div>
+
+
+
+    <!-- =====================================
+         PERSONAL INFORMATION
+    ====================================== -->
+
+    <section class="form-section">
+
+        <div class="section-heading">
+
+            <i class="fa-solid fa-user"></i>
+
+            <h2>
+                Personal Information
+            </h2>
+
+        </div>
+
+
+        <div class="form-grid">
+
+
+            <div class="form-group">
+
+                <label for="fullName">
+                    Full Name
+                </label>
+
+                <input
+                    type="text"
+                    id="fullName"
+                    placeholder="Siva Priya"
+                >
+
+            </div>
+
+
+
+            <div class="form-group">
+
+                <label for="jobTitle">
+                    Job Title
+                </label>
+
+                <input
+                    type="text"
+                    id="jobTitle"
+                    placeholder="Data Science Student"
+                >
+
+            </div>
+
+
+
+            <div class="form-group">
+
+                <label for="email">
+                    Email
+                </label>
+
+                <input
+                    type="email"
+                    id="email"
+                    placeholder="example@gmail.com"
+                >
+
+            </div>
+
+
+
+            <div class="form-group">
+
+                <label for="phone">
+                    Phone
+                </label>
+
+                <input
+                    type="text"
+                    id="phone"
+                    placeholder="+91 9876543210"
+                >
+
+            </div>
+
+
+
+            <div class="form-group full-width">
+
+                <label for="location">
+                    Location
+                </label>
+
+                <input
+                    type="text"
+                    id="location"
+                    placeholder="Tamil Nadu, India"
+                >
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================
+         PROFILE PHOTO
+    ====================================== -->
+
+    <section class="form-section">
+
+        <div class="section-heading">
+
+            <i class="fa-solid fa-camera"></i>
+
+            <h2>
+                Profile Photo
+            </h2>
+
+        </div>
+
+
+        <div class="form-group">
+
+            <label for="profilePhoto">
+                Upload Profile Photo
+            </label>
+
+            <input
+                type="file"
+                id="profilePhoto"
+                accept="image/*"
+            >
+
+            <small>
+                Recommended: JPG or PNG image.
+            </small>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================
+         PROFESSIONAL SUMMARY
+    ====================================== -->
+
+    <section class="form-section">
+
+        <div class="section-heading">
+
+            <i class="fa-solid fa-user-tie"></i>
+
+            <h2>
+                Professional Summary
+            </h2>
+
+        </div>
+
+
+        <div class="form-group">
+
+            <label for="summary">
+                Summary
+            </label>
+
+            <textarea
+                id="summary"
+                rows="6"
+                placeholder="Write your professional summary..."
+            ></textarea>
+
+
+            <button
+                type="button"
+                id="generateSummaryAI"
+                class="ai-button"
+            >
+
+                <i class="fa-solid fa-wand-magic-sparkles"></i>
+
+                Generate with AI
+
+            </button>
+
+
+            <small class="ai-help-text">
+
+                AI can create a professional summary using
+                your job title, skills and project information.
+
+            </small>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================
+         AI RESUME SUGGESTIONS
+    ====================================== -->
+
+    <section class="form-section">
+
+        <div class="section-heading">
+
+            <i class="fa-solid fa-lightbulb"></i>
+
+            <h2>
+                AI Resume Suggestions
+            </h2>
+
+        </div>
+
+
+        <div class="ai-suggestion-box">
+
+
+            <p class="ai-suggestion-intro">
+
+                Get AI-based suggestions to improve your
+                resume before generating the final version.
+
+            </p>
+
+
+            <button
+                type="button"
+                id="generateSuggestionsAI"
+                class="ai-button"
+            >
+
+                <i class="fa-solid fa-wand-magic-sparkles"></i>
+
+                Get AI Suggestions
+
+            </button>
+
+
+            <div
+                id="aiSuggestionsResult"
+                class="ai-suggestions-result"
+            >
+
+                <p class="suggestion-placeholder">
+
+                    Your resume improvement suggestions
+                    will appear here.
+
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================
+         EDUCATION
+    ====================================== -->
+
+    <section class="form-section">
+
+        <div class="section-heading">
+
+            <i class="fa-solid fa-graduation-cap"></i>
+
+            <h2>
+                Education
+            </h2>
+
+        </div>
+
+
+        <div class="form-grid">
+
+
+            <div class="form-group">
+
+                <label for="degree">
+                    Degree
+                </label>
+
+                <input
+                    type="text"
+                    id="degree"
+                    placeholder="B.Tech"
+                >
+
+            </div>
+
+
+
+            <div class="form-group">
+
+                <label for="department">
+                    Department
+                </label>
+
+                <input
+                    type="text"
+                    id="department"
+                    placeholder="Artificial Intelligence and Data Science"
+                >
+
+            </div>
+
+
+
+            <div class="form-group full-width">
+
+                <label for="college">
+                    College / University
+                </label>
+
+                <input
+                    type="text"
+                    id="college"
+                    placeholder="Your College Name"
+                >
+
+            </div>
+
+
+
+            <div class="form-group">
+
+                <label for="cgpa">
+                    CGPA
+                </label>
+
+                <input
+                    type="text"
+                    id="cgpa"
+                    placeholder="8.5"
+                >
+
+            </div>
+
+
+
+            <div class="form-group">
+
+                <label for="startYear">
+                    Start Year
+                </label>
+
+                <input
+                    type="text"
+                    id="startYear"
+                    placeholder="2025"
+                >
+
+            </div>
+
+
+
+            <div class="form-group">
+
+                <label for="endYear">
+                    End Year
+                </label>
+
+                <input
+                    type="text"
+                    id="endYear"
+                    placeholder="2029"
+                >
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================
+         SKILLS
+    ====================================== -->
+
+    <section class="form-section">
+
+        <div class="section-heading">
+
+            <i class="fa-solid fa-code"></i>
+
+            <h2>
+                Skills
+            </h2>
+
+        </div>
+
+
+        <div class="form-group">
+
+            <label for="skills">
+                Technical Skills
+            </label>
+
+            <input
+                type="text"
+                id="skills"
+                placeholder="Python, HTML, CSS, JavaScript, SQL, Machine Learning"
+            >
+
+            <small>
+                Separate each skill using commas.
+            </small>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================
+         PROJECT
+    ====================================== -->
+
+    <section class="form-section">
+
+        <div class="section-heading">
+
+            <i class="fa-solid fa-laptop-code"></i>
+
+            <h2>
+                Project
+            </h2>
+
+        </div>
+
+
+        <div class="form-grid">
+
+
+            <div class="form-group">
+
+                <label for="projectName">
+                    Project Name
+                </label>
+
+                <input
+                    type="text"
+                    id="projectName"
+                    placeholder="AI Resume Creator"
+                >
+
+            </div>
+
+
+
+            <div class="form-group">
+
+                <label for="projectTech">
+                    Technologies Used
+                </label>
+
+                <input
+                    type="text"
+                    id="projectTech"
+                    placeholder="HTML, CSS, JavaScript, Python"
+                >
+
+            </div>
+
+
+
+            <div class="form-group full-width">
+
+                <label for="projectDescription">
+                    Project Description
+                </label>
+
+                <textarea
+                    id="projectDescription"
+                    rows="6"
+                    placeholder="Describe your project..."
+                ></textarea>
+
+
+                <button
+                    type="button"
+                    id="generateProjectAI"
+                    class="ai-button"
+                >
+
+                    <i class="fa-solid fa-wand-magic-sparkles"></i>
+
+                    Generate with AI
+
+                </button>
+
+
+                <small class="ai-help-text">
+
+                    AI can create a professional project
+                    description using your project name
+                    and technologies.
+
+                </small>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================
+         CERTIFICATION
+    ====================================== -->
+
+    <section class="form-section">
+
+        <div class="section-heading">
+
+            <i class="fa-solid fa-certificate"></i>
+
+            <h2>
+                Certification
+            </h2>
+
+        </div>
+
+
+        <div class="form-grid">
+
+
+            <div class="form-group">
+
+                <label for="certification">
+                    Certification
+                </label>
+
+                <input
+                    type="text"
+                    id="certification"
+                    placeholder="Python for Data Science"
+                >
+
+            </div>
+
+
+
+            <div class="form-group">
+
+                <label for="certOrganization">
+                    Organization
+                </label>
+
+                <input
+                    type="text"
+                    id="certOrganization"
+                    placeholder="NPTEL"
+                >
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================
+         ACHIEVEMENTS
+    ====================================== -->
+
+    <section class="form-section">
+
+        <div class="section-heading">
+
+            <i class="fa-solid fa-trophy"></i>
+
+            <h2>
+                Achievements
+            </h2>
+
+        </div>
+
+
+        <div class="form-group">
+
+            <label for="achievements">
+                Achievements
+            </label>
+
+            <textarea
+                id="achievements"
+                rows="6"
+                placeholder="Enter each achievement on a new line..."
+            ></textarea>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================
+         LANGUAGES
+    ====================================== -->
+
+    <section class="form-section">
+
+        <div class="section-heading">
+
+            <i class="fa-solid fa-language"></i>
+
+            <h2>
+                Languages
+            </h2>
+
+        </div>
+
+
+        <div class="language-options">
+
+
+            <label class="language-option">
+
+                <input
+                    type="checkbox"
+                    value="Tamil"
+                >
+
+                <span>
+                    Tamil
+                </span>
+
+            </label>
+
+
+
+            <label class="language-option">
+
+                <input
+                    type="checkbox"
+                    value="English"
+                >
+
+                <span>
+                    English
+                </span>
+
+            </label>
+
+
+
+            <label class="language-option">
+
+                <input
+                    type="checkbox"
+                    value="Hindi"
+                >
+
+                <span>
+                    Hindi
+                </span>
+
+            </label>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================
+         SOCIAL & PORTFOLIO
+    ====================================== -->
+
+    <section class="form-section">
+
+        <div class="section-heading">
+
+            <i class="fa-solid fa-link"></i>
+
+            <h2>
+                Social & Portfolio Links
+            </h2>
+
+        </div>
+
+
+        <div class="form-grid">
+
+
+            <div class="form-group">
+
+                <label for="linkedin">
+                    LinkedIn
+                </label>
+
+                <input
+                    type="url"
+                    id="linkedin"
+                    placeholder="https://www.linkedin.com/in/yourname"
+                >
+
+            </div>
+
+
+
+            <div class="form-group">
+
+                <label for="github">
+                    GitHub
+                </label>
+
+                <input
+                    type="url"
+                    id="github"
+                    placeholder="https://github.com/yourname"
+                >
+
+            </div>
+
+
+
+            <div class="form-group full-width">
+
+                <label for="portfolio">
+                    Portfolio
+                </label>
+
+                <input
+                    type="url"
+                    id="portfolio"
+                    placeholder="https://yourportfolio.com"
+                >
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================
+         RESUME LANGUAGE
+    ====================================== -->
+
+    <section class="form-section">
+
+        <div class="section-heading">
+
+            <i class="fa-solid fa-globe"></i>
+
+            <h2>
+                Resume Language
+            </h2>
+
+        </div>
+
+
+        <div class="form-group">
+
+            <label for="resumeLanguage">
+                Select Language
+            </label>
+
+            <select id="resumeLanguage">
+
+                <option value="English">
+                    English
+                </option>
+
+                <option value="Tamil">
+                    Tamil
+                </option>
+
+                <option value="Hindi">
+                    Hindi
+                </option>
+
+            </select>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================
+         RESUME TEMPLATE
+    ====================================== -->
+
+    <section class="form-section">
+
+        <div class="section-heading">
+
+            <i class="fa-solid fa-palette"></i>
+
+            <h2>
+                Choose Resume Template
+            </h2>
+
+        </div>
+
+
+        <div class="template-grid">
+
+
+            <!-- CLASSIC -->
+
+            <label class="template-card">
+
+                <input
+                    type="radio"
+                    name="resumeTemplate"
+                    value="classic"
+                    checked
+                >
+
+                <img
+                    src="images/classic-template.png"
+                    alt="Classic Resume Template"
+                    class="template-image"
+                >
+
+                <div class="template-info">
+
+                    <strong>
+                        Classic
+                    </strong>
+
+                    <span>
+                        Professional and clean
+                    </span>
+
+                </div>
+
+            </label>
+
+
+
+            <!-- MODERN -->
+
+            <label class="template-card">
+
+                <input
+                    type="radio"
+                    name="resumeTemplate"
+                    value="modern"
+                >
+
+                <img
+                    src="images/modern-template.png"
+                    alt="Modern Resume Template"
+                    class="template-image"
+                >
+
+                <div class="template-info">
+
+                    <strong>
+                        Modern
+                    </strong>
+
+                    <span>
+                        Stylish and contemporary
+                    </span>
+
+                </div>
+
+            </label>
+
+
+
+            <!-- ELEGANT -->
+
+            <label class="template-card">
+
+                <input
+                    type="radio"
+                    name="resumeTemplate"
+                    value="elegant"
+                >
+
+                <img
+                    src="images/elegant-template.png"
+                    alt="Elegant Resume Template"
+                    class="template-image"
+                >
+
+                <div class="template-info">
+
+                    <strong>
+                        Elegant
+                    </strong>
+
+                    <span>
+                        Simple and elegant
+                    </span>
+
+                </div>
+
+            </label>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================
+         GENERATE BUTTON
+    ====================================== -->
+
+    <div class="generate-container">
+
+    <button
+        type="button"
+        id="saveResume"
+        class="save-button"
+    >
+
+        <i class="fa-solid fa-floppy-disk"></i>
+
+        Save Resume
+
+    </button>
+
+
+    <button
+        type="button"
+        id="generateResume"
+        class="generate-button"
+    >
+
+        <i class="fa-solid fa-file-circle-check"></i>
+
+        Generate Resume
+
+    </button>
+
+</div>
+
+
+</main>
+
+
+
+<!-- =========================================
+     JAVASCRIPT
+========================================= -->
+
+<script src="resume-builder.js"></script>
+
+</body>
+
+</html>

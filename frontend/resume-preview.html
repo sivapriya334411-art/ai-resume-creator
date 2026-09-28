@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>AI Resume Creator - Preview</title>
+
+    <link rel="stylesheet"
+          href="resume-preview.css">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <!-- QR Code -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+
+</head>
+
+
+<body>
+
+
+<!-- =========================================
+     TOP HEADER
+========================================= -->
+
+<header class="preview-header">
+
+    <div class="header-left">
+
+        <button id="editResumeBtn"
+                class="back-btn">
+
+            <i class="fa-solid fa-arrow-left"></i>
+
+            Edit Resume
+
+        </button>
+
+    </div>
+
+
+    <div class="header-title">
+
+        <i class="fa-solid fa-file-lines"></i>
+
+        <span>AI Resume Creator</span>
+
+    </div>
+
+
+    <div class="header-right">
+
+    <button id="shareResumeBtn"
+            class="share-btn">
+
+        <i class="fa-solid fa-share-nodes"></i>
+
+        Share
+
+    </button>
+
+
+    <button id="downloadResumeBtn"
+            class="download-btn">
+
+        <i class="fa-solid fa-download"></i>
+
+        Download
+
+    </button>
+
+</div>
+
+</header>
+
+
+
+<!-- =========================================
+     MAIN
+========================================= -->
+
+<main class="preview-container">
+
+
+    <!-- =====================================
+         RESUME PAPER
+    ====================================== -->
+
+    <div id="resumePaper"
+         class="resume-paper template-classic">
+
+
+        <!-- =================================
+             PROFILE HEADER
+        ================================== -->
+
+        <section class="resume-header">
+
+
+            <div class="profile-photo-area">
+
+                <img id="previewPhoto"
+                     class="profile-photo"
+                     src=""
+                     alt="Profile Photo">
+
+                <div id="photoPlaceholder"
+                     class="photo-placeholder">
+
+                    <i class="fa-solid fa-user"></i>
+
+                </div>
+
+            </div>
+
+
+            <div class="profile-info">
+
+                <h1 id="previewName">
+                    Your Name
+                </h1>
+
+                <h2 id="previewJobTitle">
+                    Job Title
+                </h2>
+
+
+                <div class="contact-info">
+
+                    <span id="previewEmail">
+
+                        <i class="fa-solid fa-envelope"></i>
+
+                        Email
+
+                    </span>
+
+
+                    <span id="previewPhone">
+
+                        <i class="fa-solid fa-phone"></i>
+
+                        Phone
+
+                    </span>
+
+
+                    <span id="previewLocation">
+
+                        <i class="fa-solid fa-location-dot"></i>
+
+                        Location
+
+                    </span>
+
+                </div>
+
+
+                <!-- SOCIAL LINKS -->
+
+                <div class="social-links">
+
+                    <a id="previewLinkedIn"
+                       href="#"
+                       target="_blank">
+
+                        <i class="fa-brands fa-linkedin"></i>
+
+                    </a>
+
+
+                    <a id="previewGithub"
+                       href="#"
+                       target="_blank">
+
+                        <i class="fa-brands fa-github"></i>
+
+                    </a>
+
+
+                    <a id="previewPortfolio"
+                       href="#"
+                       target="_blank">
+
+                        <i class="fa-solid fa-globe"></i>
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================
+             PROFESSIONAL SUMMARY
+        ================================== -->
+
+        <section class="resume-section">
+
+            <h2 class="section-title">
+
+                <i class="fa-solid fa-user-tie"></i>
+
+                Professional Summary
+
+            </h2>
+
+
+            <p id="previewSummary"
+               class="section-text">
+            </p>
+
+        </section>
+
+
+
+        <!-- =================================
+             EDUCATION
+        ================================== -->
+
+        <section class="resume-section">
+
+            <h2 class="section-title">
+
+                <i class="fa-solid fa-graduation-cap"></i>
+
+                Education
+
+            </h2>
+
+
+            <div class="education-item">
+
+
+                <div class="education-main">
+
+                    <h3 id="previewDegree"></h3>
+
+                    <p id="previewDepartment"></p>
+
+                    <p id="previewCollege"></p>
+
+                    <p id="previewCGPA"></p>
+
+                </div>
+
+
+                <div class="education-years">
+
+                    <span id="previewEducationYears"></span>
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================
+             SKILLS
+        ================================== -->
+
+        <section class="resume-section">
+
+            <h2 class="section-title">
+
+                <i class="fa-solid fa-code"></i>
+
+                Technical Skills
+
+            </h2>
+
+
+            <div id="previewSkills"
+                 class="skills-container">
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================
+             PROJECT
+        ================================== -->
+
+        <section class="resume-section">
+
+            <h2 class="section-title">
+
+                <i class="fa-solid fa-diagram-project"></i>
+
+                Project
+
+            </h2>
+
+
+            <div class="project-item">
+
+                <h3 id="previewProjectName"></h3>
+
+                <p id="previewProjectTech"
+                   class="project-tech">
+                </p>
+
+                <p id="previewProjectDescription"
+                   class="section-text">
+                </p>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================
+             CERTIFICATION
+        ================================== -->
+
+        <section class="resume-section">
+
+            <h2 class="section-title">
+
+                <i class="fa-solid fa-certificate"></i>
+
+                Certification
+
+            </h2>
+
+
+            <p id="previewCertification"
+               class="section-text">
+            </p>
+
+        </section>
+
+
+
+        <!-- =================================
+             ACHIEVEMENTS
+        ================================== -->
+
+        <section class="resume-section">
+
+            <h2 class="section-title">
+
+                <i class="fa-solid fa-trophy"></i>
+
+                Achievements
+
+            </h2>
+
+
+            <ul id="previewAchievements"
+                class="achievements-list">
+            </ul>
+
+        </section>
+
+
+
+        <!-- =================================
+             LANGUAGES
+        ================================== -->
+
+        <section class="resume-section">
+
+            <h2 class="section-title">
+
+                <i class="fa-solid fa-language"></i>
+
+                Languages
+
+            </h2>
+
+
+            <div id="previewLanguages"
+                 class="languages-container">
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================
+             PORTFOLIO QR
+        ================================== -->
+
+        <section class="resume-section qr-section">
+
+
+            <div class="qr-content">
+
+                <div>
+
+                    <h2 class="section-title">
+
+                        <i class="fa-solid fa-qrcode"></i>
+
+                        Live Portfolio
+
+                    </h2>
+
+                    <p class="section-text">
+
+                        Scan the QR code to view my
+                        online portfolio.
+
+                    </p>
+
+                </div>
+
+
+                <div id="qrCode"
+                     class="qr-code">
+                </div>
+
+            </div>
+
+
+        </section>
+
+
+    </div>
+
+
+
+    <!-- =========================================
+         ACTION AREA
+    ========================================= -->
+
+    <div class="preview-actions">
+
+    <button id="calculateATSBtn"
+            class="ats-btn">
+        <i class="fa-solid fa-chart-line"></i>
+        Check ATS Score
+    </button>
+
+    <button id="generateInterviewBtn"
+            class="interview-btn">
+        <i class="fa-solid fa-comments"></i>
+        Generate Interview Questions
+    </button>
+
+</div>
+
+
+<!-- ATS SCORE SECTION -->
+
+<section id="atsSection"
+         class="ats-section">
+
+    <div class="ats-header">
+
+        <div>
+            <h2>
+                <i class="fa-solid fa-chart-line"></i>
+                ATS Resume Score
+            </h2>
+
+            <p>
+                Your resume is checked based on
+                important resume and ATS-friendly criteria.
+            </p>
+        </div>
+
+        <div class="ats-score-circle">
+
+            <span id="atsScore">0</span>
+
+            <small>/100</small>
+
+        </div>
+
+    </div>
+
+
+    <div class="ats-progress-container">
+
+        <div id="atsProgress"
+             class="ats-progress">
+        </div>
+
+    </div>
+
+
+    <div id="atsMessage"
+         class="ats-message">
+    </div>
+
+
+    <div id="atsBreakdown"
+         class="ats-breakdown">
+    </div>
+
+</section>
+
+
+
+    <!-- =========================================
+         INTERVIEW SECTION
+    ========================================= -->
+
+    <section id="interviewSection"
+             class="interview-section">
+
+
+        <h2>
+
+            <i class="fa-solid fa-comments"></i>
+
+            Interview Questions
+
+        </h2>
+
+
+        <p class="interview-intro">
+
+            Prepare for your interview using
+            questions generated from your resume.
+
+        </p>
+
+
+        <div id="interviewQuestions">
+
+        </div>
+
+
+    </section>
+
+
+</main>
+
+
+
+<!-- =========================================
+     JAVASCRIPT
+========================================= -->
+
+<script src="resume-preview.js"></script>
+
+
+</body>
+
+</html>

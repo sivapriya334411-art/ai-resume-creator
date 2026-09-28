@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>AI Resume Creator | Login</title>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <!-- Existing Style File -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- =========================
+         TOP STATUS BAR
+    ========================== -->
+    <div class="status-bar">
+
+        <span id="statusTime">09:41</span>
+
+        <div class="status-icons">
+
+            <i class="fa-solid fa-signal"></i>
+
+            <i class="fa-solid fa-wifi"></i>
+
+            <div class="battery">
+
+                <div class="battery-body">
+                    <div class="battery-level"></div>
+                </div>
+
+                <div class="battery-tip"></div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- =========================
+         LOGIN CONTAINER
+    ========================== -->
+    <main class="login-container">
+
+        <div class="login-card">
+
+
+            <!-- LOGO -->
+            <div class="logo">
+
+                <div class="logo-icon">
+                    <i class="fa-solid fa-file-signature"></i>
+                </div>
+
+            </div>
+
+
+            <!-- TITLE -->
+            <h1>AI Resume Creator</h1>
+
+            <p class="subtitle">
+                Create a professional resume with AI
+            </p>
+
+
+            <!-- LOGIN FORM -->
+            <form id="loginForm">
+
+
+                <!-- EMAIL -->
+                <div class="input-group">
+
+                    <label for="email">
+                        Email Address
+                    </label>
+
+                    <div class="input-box">
+
+                        <i class="fa-regular fa-envelope input-icon"></i>
+
+                        <input
+                            type="email"
+                            id="email"
+                            placeholder="Enter your email"
+                            required
+                        >
+
+                    </div>
+
+                </div>
+
+
+                <!-- PASSWORD -->
+                <div class="input-group">
+
+                    <label for="password">
+                        Password
+                    </label>
+
+                    <div class="input-box">
+
+                        <i class="fa-solid fa-lock input-icon"></i>
+
+                        <input
+                            type="password"
+                            id="password"
+                            placeholder="Enter your password"
+                            required
+                        >
+
+                        <button
+                            type="button"
+                            id="togglePassword"
+                            class="password-toggle"
+                            aria-label="Show password"
+                        >
+                            <i class="fa-regular fa-eye"></i>
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <!-- OPTIONS -->
+                <div class="login-options">
+
+                    <label class="remember-me">
+
+                        <input
+                            type="checkbox"
+                            id="rememberMe"
+                        >
+
+                        <span>Remember me</span>
+
+                    </label>
+
+                    <a href="#" class="forgot">
+                        Forgot Password?
+                    </a>
+
+                </div>
+
+
+                <!-- LOGIN BUTTON -->
+                <button
+                    type="submit"
+                    class="login-btn"
+                >
+
+                    <span>Login</span>
+
+                    <i class="fa-solid fa-arrow-right"></i>
+
+                </button>
+
+            </form>
+
+
+            <!-- DIVIDER -->
+            <div class="divider">
+
+                <span>or</span>
+
+            </div>
+
+
+            <!-- REGISTER -->
+            <p class="register-text">
+
+                Don't have an account?
+
+                <a href="#">
+                    Create Account
+                </a>
+
+            </p>
+
+
+            <!-- SECURITY -->
+            <div class="security-note">
+
+                <i class="fa-solid fa-shield-halved"></i>
+
+                <span>
+                    Your information is securely protected
+                </span>
+
+            </div>
+
+        </div>
+
+    </main>
+
+
+    <!-- =========================
+         LIVE TIME
+    ========================== -->
+    <script>
+
+        function updateTime() {
+
+            const timeElement =
+                document.getElementById("statusTime");
+
+            const now = new Date();
+
+            let hours = now.getHours();
+            let minutes = now.getMinutes();
+
+            hours =
+                hours.toString().padStart(2, "0");
+
+            minutes =
+                minutes.toString().padStart(2, "0");
+
+            timeElement.textContent =
+                hours + ":" + minutes;
+        }
+
+        updateTime();
+
+        setInterval(updateTime, 1000);
+
+    </script>
+
+
+    <!-- EXISTING LOGIN SCRIPT -->
+    <script src="script.js"></script>
+
+</body>
+
+</html>

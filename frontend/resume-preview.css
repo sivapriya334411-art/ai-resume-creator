@@ -1,0 +1,1838 @@
+/* =========================================================
+   AI RESUME CREATOR
+   PROFESSIONAL RESUME PREVIEW
+   CLASSIC / MODERN / ELEGANT
+========================================================= */
+
+
+/* =========================================================
+   GLOBAL
+========================================================= */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background: #eef2f7;
+    color: #1f2937;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+/* =========================================================
+   TOP PREVIEW HEADER
+========================================================= */
+
+.preview-header {
+    width: 100%;
+    height: 64px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 28px;
+
+    background: #ffffff;
+    border-bottom: 1px solid #dbe2ea;
+
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.header-left,
+.header-right {
+    width: 180px;
+}
+
+.header-right {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.header-title {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+
+    font-size: 20px;
+    font-weight: 700;
+
+    color: #173b63;
+}
+
+.header-title i {
+    color: #245f98;
+}
+
+.back-btn,
+.download-btn {
+    border: none;
+    border-radius: 8px;
+
+    padding: 10px 15px;
+
+    font-size: 13px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: 0.2s ease;
+}
+
+.back-btn {
+    background: #edf3f9;
+    color: #173b63;
+}
+
+.download-btn {
+    background: #173b63;
+    color: #ffffff;
+}
+
+.back-btn:hover,
+.download-btn:hover {
+    transform: translateY(-1px);
+    opacity: 0.92;
+}
+
+
+/* =========================================================
+   MAIN PREVIEW
+========================================================= */
+
+.preview-container {
+    width: 100%;
+    padding: 35px 20px 60px;
+
+    overflow-x: auto;
+}
+
+
+/* =========================================================
+   A4 RESUME PAPER
+========================================================= */
+
+.resume-paper {
+    width: 210mm;
+    min-height: 297mm;
+
+    margin: 0 auto;
+
+    background: #ffffff;
+
+    position: relative;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 12px 35px rgba(15, 23, 42, 0.14);
+
+    border-radius: 3px;
+}
+
+
+/* =========================================================
+   COMMON PROFILE HEADER
+========================================================= */
+
+.resume-header {
+    display: flex;
+    align-items: center;
+
+    gap: 24px;
+
+    padding: 30px 34px 25px;
+
+    background: #ffffff;
+}
+
+.profile-photo-area {
+    flex-shrink: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.profile-photo,
+.photo-placeholder {
+    width: 112px;
+    height: 112px;
+
+    border-radius: 50%;
+
+    object-fit: cover;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.profile-photo {
+    display: none;
+
+    border: 3px solid #8db7d9;
+}
+
+.photo-placeholder {
+    background: #edf2f7;
+
+    color: #52677d;
+
+    border: 3px solid #8db7d9;
+
+    font-size: 30px;
+}
+
+.profile-info {
+    flex: 1;
+    min-width: 0;
+}
+
+.profile-info h1 {
+    margin: 0;
+
+    font-size: 29px;
+    line-height: 1.1;
+
+    font-weight: 700;
+
+    color: #173b63;
+}
+
+.profile-info h2 {
+    margin: 7px 0 0;
+
+    font-size: 15px;
+
+    font-weight: 600;
+
+    color: #245f98;
+}
+
+
+/* =========================================================
+   CONTACT
+========================================================= */
+
+.contact-info {
+    display: flex;
+    flex-wrap: wrap;
+
+    gap: 7px 18px;
+
+    margin-top: 14px;
+
+    font-size: 11.5px;
+
+    color: #3f4f60;
+}
+
+.contact-info span {
+    display: inline-flex;
+    align-items: center;
+
+    gap: 6px;
+}
+
+.contact-info i {
+    color: #245f98;
+    font-size: 11px;
+}
+
+
+/* =========================================================
+   SOCIAL LINKS
+========================================================= */
+
+.social-links {
+    display: flex;
+    align-items: center;
+
+    gap: 14px;
+
+    margin-top: 11px;
+}
+
+.social-links a {
+    display: inline-flex;
+    align-items: center;
+
+    gap: 5px;
+
+    text-decoration: none;
+
+    color: #173b63;
+
+    font-size: 11px;
+    font-weight: 600;
+}
+
+.social-links a i {
+    font-size: 14px;
+}
+
+.social-links a:hover {
+    color: #245f98;
+}
+
+
+/* =========================================================
+   COMMON RESUME SECTION
+========================================================= */
+
+.resume-section {
+    padding: 15px 34px;
+
+    margin: 0;
+}
+
+.section-title {
+    display: flex;
+    align-items: center;
+
+    gap: 8px;
+
+    margin: 0 0 9px;
+
+    padding-bottom: 6px;
+
+    border-bottom: 1px solid #d7e0e8;
+
+    color: #173b63;
+
+    font-size: 14px;
+
+    font-weight: 700;
+
+    text-transform: uppercase;
+
+    letter-spacing: 0.25px;
+}
+
+.section-title i {
+    color: #245f98;
+
+    font-size: 13px;
+}
+
+.section-text {
+    margin: 0;
+
+    color: #334155;
+
+    font-size: 11.5px;
+
+    line-height: 1.55;
+}
+
+
+/* =========================================================
+   EDUCATION
+========================================================= */
+
+.education-item {
+    display: flex;
+    justify-content: space-between;
+
+    gap: 20px;
+}
+
+.education-main {
+    flex: 1;
+}
+
+.education-main h3 {
+    margin: 0 0 4px;
+
+    font-size: 12px;
+
+    color: #173b63;
+
+    font-weight: 700;
+}
+
+.education-main p {
+    margin: 3px 0;
+
+    font-size: 11px;
+
+    color: #475569;
+
+    line-height: 1.4;
+}
+
+.education-years {
+    flex-shrink: 0;
+
+    font-size: 10.5px;
+
+    color: #64748b;
+
+    white-space: nowrap;
+}
+
+
+/* =========================================================
+   SKILLS
+========================================================= */
+
+.skills-container,
+.languages-container {
+    display: flex;
+    flex-wrap: wrap;
+
+    gap: 7px;
+}
+
+.skills-container span,
+.languages-container span {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 5px 10px;
+
+    border-radius: 15px;
+
+    background: #edf3f9;
+
+    border: 1px solid #d7e3ef;
+
+    color: #173b63;
+
+    font-size: 10px;
+
+    font-weight: 600;
+}
+
+
+/* =========================================================
+   PROJECT
+========================================================= */
+
+.project-item h3 {
+    margin: 0 0 4px;
+
+    font-size: 12px;
+
+    color: #173b63;
+
+    font-weight: 700;
+}
+
+.project-tech {
+    margin: 0 0 7px;
+
+    color: #64748b;
+
+    font-size: 10.5px;
+
+    font-weight: 500;
+}
+
+
+/* =========================================================
+   ACHIEVEMENTS
+========================================================= */
+
+.achievements-list {
+    margin: 0;
+
+    padding-left: 18px;
+}
+
+.achievements-list li {
+    margin-bottom: 4px;
+
+    color: #334155;
+
+    font-size: 11px;
+
+    line-height: 1.45;
+}
+
+
+/* =========================================================
+   QR
+========================================================= */
+
+.qr-content {
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 20px;
+}
+
+.qr-code {
+    flex-shrink: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 6px;
+
+    background: #ffffff;
+
+    border: 1px solid #d7e0e8;
+}
+
+.qr-code img,
+.qr-code canvas {
+    display: block;
+}
+
+
+/* =========================================================
+   =========================================================
+   CLASSIC TEMPLATE
+   =========================================================
+========================================================= */
+
+.resume-paper.template-classic {
+    background: #ffffff;
+
+    color: #27364a;
+
+    padding: 0 0 20px;
+}
+
+
+/* Classic header */
+
+.template-classic .resume-header {
+    padding: 32px 36px 24px;
+
+    border-bottom: 2px solid #9bbbd8;
+}
+
+.template-classic .profile-photo,
+.template-classic .photo-placeholder {
+    width: 112px;
+    height: 112px;
+}
+
+.template-classic .profile-photo {
+    border: 2px solid #7da8cf;
+}
+
+.template-classic .photo-placeholder {
+    border: 2px solid #7da8cf;
+
+    background: #f1f5f9;
+
+    color: #52708d;
+}
+
+.template-classic .profile-info h1 {
+    font-size: 29px;
+
+    color: #173b63;
+}
+
+.template-classic .profile-info h2 {
+    font-size: 15px;
+
+    color: #245f98;
+}
+
+
+/* Classic sections */
+
+.template-classic .resume-section {
+    padding: 13px 36px;
+
+    border-bottom: 1px solid #dbe4ec;
+}
+
+.template-classic .resume-section:last-child {
+    border-bottom: none;
+}
+
+.template-classic .section-title {
+    font-size: 13px;
+
+    color: #1b507d;
+
+    border-bottom: none;
+
+    padding-bottom: 4px;
+
+    margin-bottom: 7px;
+}
+
+.template-classic .section-title i {
+    color: #245f98;
+}
+
+.template-classic .section-text {
+    font-size: 11.5px;
+
+    line-height: 1.55;
+}
+
+.template-classic .skills-container span {
+    background: #edf3f9;
+
+    border: 1px solid #d9e5ef;
+
+    color: #173b63;
+
+    border-radius: 14px;
+
+    padding: 5px 11px;
+}
+
+.template-classic .qr-section {
+    border-top: 1px solid #9bbbd8;
+
+    border-bottom: none;
+
+    padding-top: 14px;
+}
+
+.template-classic .qr-code {
+    border: none;
+}
+
+
+/* =========================================================
+   =========================================================
+   MODERN TEMPLATE
+   =========================================================
+========================================================= */
+
+.resume-paper.template-modern {
+    display: grid;
+
+    grid-template-columns: 235px 1fr;
+
+    grid-template-rows: auto 1fr;
+
+    padding: 0;
+
+    background: #ffffff;
+
+    color: #26384d;
+}
+
+
+/* Modern header */
+
+.template-modern .resume-header {
+    grid-column: 1 / -1;
+
+    min-height: 175px;
+
+    padding: 28px 30px;
+
+    background: #102f52;
+
+    color: #ffffff;
+}
+
+.template-modern .profile-photo,
+.template-modern .photo-placeholder {
+    width: 108px;
+    height: 108px;
+}
+
+.template-modern .profile-photo {
+    border: 4px solid #8db7d9;
+}
+
+.template-modern .photo-placeholder {
+    background: #ffffff;
+
+    color: #102f52;
+
+    border: 4px solid #8db7d9;
+}
+
+.template-modern .profile-info h1 {
+    color: #ffffff;
+
+    font-size: 28px;
+}
+
+.template-modern .profile-info h2 {
+    color: #cbd9e7;
+
+    font-size: 14px;
+
+    font-weight: 500;
+}
+
+.template-modern .contact-info {
+    color: #e8f0f7;
+
+    font-size: 10.5px;
+}
+
+.template-modern .contact-info i {
+    color: #9fc4e2;
+}
+
+.template-modern .social-links a {
+    color: #ffffff;
+
+    font-size: 10.5px;
+}
+
+.template-modern .social-links a i {
+    color: #9fc4e2;
+}
+
+
+/* Modern sidebar */
+
+.template-modern .resume-section:nth-of-type(4),
+.template-modern .resume-section:nth-of-type(8),
+.template-modern .resume-section:nth-of-type(9) {
+    background: #102f52;
+
+    color: #ffffff;
+}
+
+
+/* Skills sidebar */
+
+.template-modern .resume-section:nth-of-type(4) {
+    grid-column: 1;
+
+    grid-row: 2;
+
+    padding: 25px 20px 10px;
+}
+
+
+/* Languages sidebar */
+
+.template-modern .resume-section:nth-of-type(8) {
+    grid-column: 1;
+
+    grid-row: 3;
+
+    padding: 10px 20px 20px;
+}
+
+
+/* QR sidebar */
+
+.template-modern .resume-section:nth-of-type(9) {
+    grid-column: 1;
+
+    grid-row: 4;
+
+    padding: 10px 20px 28px;
+}
+
+
+/* Modern main sections */
+
+.template-modern .resume-section:nth-of-type(2),
+.template-modern .resume-section:nth-of-type(3),
+.template-modern .resume-section:nth-of-type(5),
+.template-modern .resume-section:nth-of-type(6),
+.template-modern .resume-section:nth-of-type(7) {
+    grid-column: 2;
+
+    padding-left: 30px;
+
+    padding-right: 30px;
+}
+
+.template-modern .resume-section:nth-of-type(2) {
+    grid-row: 2;
+
+    padding-top: 25px;
+}
+
+.template-modern .resume-section:nth-of-type(3) {
+    grid-row: 3;
+}
+
+.template-modern .resume-section:nth-of-type(5) {
+    grid-row: 4;
+}
+
+.template-modern .resume-section:nth-of-type(6) {
+    grid-row: 5;
+}
+
+.template-modern .resume-section:nth-of-type(7) {
+    grid-row: 6;
+}
+
+
+/* Modern sidebar text */
+
+.template-modern .resume-section:nth-of-type(4) .section-title,
+.template-modern .resume-section:nth-of-type(8) .section-title,
+.template-modern .resume-section:nth-of-type(9) .section-title {
+    color: #ffffff;
+
+    border-bottom-color: rgba(255,255,255,0.18);
+}
+
+.template-modern .resume-section:nth-of-type(4) .section-title i,
+.template-modern .resume-section:nth-of-type(8) .section-title i,
+.template-modern .resume-section:nth-of-type(9) .section-title i {
+    color: #9fc4e2;
+}
+
+.template-modern .resume-section:nth-of-type(8) .languages-container {
+    display: block;
+}
+
+.template-modern .resume-section:nth-of-type(8)
+.languages-container span {
+    display: block;
+
+    background: transparent;
+
+    border: none;
+
+    padding: 2px 0;
+
+    color: #ffffff;
+
+    border-radius: 0;
+
+    text-align: left;
+}
+
+.template-modern .skills-container span {
+    background: rgba(255,255,255,0.11);
+
+    border: 1px solid rgba(255,255,255,0.18);
+
+    color: #ffffff;
+
+    padding: 6px 9px;
+
+    border-radius: 6px;
+}
+
+.template-modern .qr-content {
+    flex-direction: column;
+
+    align-items: center;
+
+    text-align: center;
+
+    gap: 10px;
+}
+
+.template-modern .qr-code {
+    background: #ffffff;
+
+    border: none;
+
+    padding: 7px;
+}
+
+.template-modern .qr-section .section-title {
+    justify-content: center;
+}
+
+.template-modern .section-text {
+    font-size: 11.2px;
+
+    line-height: 1.55;
+}
+
+.template-modern .resume-section:nth-of-type(4) .section-text,
+.template-modern .resume-section:nth-of-type(8) .section-text,
+.template-modern .resume-section:nth-of-type(9) .section-text {
+    color: #dce8f2;
+}
+
+
+/* Modern section icon */
+
+.template-modern .resume-section:nth-of-type(2)
+.section-title i,
+.template-modern .resume-section:nth-of-type(3)
+.section-title i,
+.template-modern .resume-section:nth-of-type(5)
+.section-title i,
+.template-modern .resume-section:nth-of-type(6)
+.section-title i,
+.template-modern .resume-section:nth-of-type(7)
+.section-title i {
+    color: #2d6f9f;
+}
+
+
+/* =========================================================
+   =========================================================
+   ELEGANT TEMPLATE
+   =========================================================
+========================================================= */
+
+.resume-paper.template-elegant {
+    display: grid;
+
+    grid-template-columns: 1fr 245px;
+
+    background: #fbf7f2;
+
+    color: #4b403a;
+
+    padding: 0;
+}
+
+
+/* Elegant header */
+
+.template-elegant .resume-header {
+    grid-column: 1 / -1;
+
+    min-height: 185px;
+
+    padding: 30px 36px 24px;
+
+    background: #fbf7f2;
+
+    border-bottom: 1px solid #d9c9bd;
+
+    position: relative;
+}
+
+.template-elegant .resume-header::after {
+    content: "";
+
+    position: absolute;
+
+    left: 36px;
+
+    bottom: -2px;
+
+    width: 75px;
+
+    height: 3px;
+
+    background: #b47a6c;
+
+    border-radius: 4px;
+}
+
+.template-elegant .profile-photo,
+.template-elegant .photo-placeholder {
+    width: 112px;
+    height: 112px;
+}
+
+.template-elegant .profile-photo {
+    border: 2px solid #c9ad9f;
+
+    box-shadow: 0 3px 10px rgba(80,55,45,0.12);
+}
+
+.template-elegant .photo-placeholder {
+    background: #eee3da;
+
+    color: #80665c;
+
+    border: 2px solid #c9ad9f;
+}
+
+.template-elegant .profile-info h1 {
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 31px;
+
+    font-style: italic;
+
+    font-weight: 500;
+
+    color: #49382f;
+
+    letter-spacing: 0.3px;
+}
+
+.template-elegant .profile-info h2 {
+    color: #927066;
+
+    font-size: 14px;
+
+    font-weight: 500;
+}
+
+.template-elegant .contact-info {
+    color: #665952;
+
+    font-size: 10.5px;
+}
+
+.template-elegant .contact-info i {
+    color: #8c7065;
+}
+
+.template-elegant .social-links {
+    gap: 14px;
+}
+
+.template-elegant .social-links a {
+    color: #624f47;
+
+    font-size: 10.5px;
+}
+
+.template-elegant .social-links a i {
+    color: #8f6b5e;
+}
+
+
+/* Elegant left content */
+
+.template-elegant .resume-section:nth-of-type(2),
+.template-elegant .resume-section:nth-of-type(3),
+.template-elegant .resume-section:nth-of-type(5),
+.template-elegant .resume-section:nth-of-type(6),
+.template-elegant .resume-section:nth-of-type(7) {
+    grid-column: 1;
+
+    padding-left: 32px;
+
+    padding-right: 28px;
+}
+
+
+/* Elegant right content */
+
+.template-elegant .resume-section:nth-of-type(4),
+.template-elegant .resume-section:nth-of-type(8),
+.template-elegant .resume-section:nth-of-type(9) {
+    grid-column: 2;
+
+    padding-left: 22px;
+
+    padding-right: 22px;
+
+    background: #f6eee7;
+
+    border-left: 1px solid #dfd0c5;
+}
+
+
+/* Row placement */
+
+.template-elegant .resume-section:nth-of-type(2) {
+    grid-row: 2;
+}
+
+.template-elegant .resume-section:nth-of-type(3) {
+    grid-row: 3;
+}
+
+.template-elegant .resume-section:nth-of-type(4) {
+    grid-row: 2;
+}
+
+.template-elegant .resume-section:nth-of-type(5) {
+    grid-row: 4;
+}
+
+.template-elegant .resume-section:nth-of-type(6) {
+    grid-row: 5;
+}
+
+.template-elegant .resume-section:nth-of-type(7) {
+    grid-row: 6;
+}
+
+.template-elegant .resume-section:nth-of-type(8) {
+    grid-row: 3;
+}
+
+.template-elegant .resume-section:nth-of-type(9) {
+    grid-row: 4 / 7;
+}
+
+
+/* Elegant headings */
+
+.template-elegant .section-title {
+    color: #49382f;
+
+    font-size: 12.5px;
+
+    border-bottom: 1px solid #ddcec4;
+
+    padding-bottom: 6px;
+}
+
+.template-elegant .section-title i {
+    color: #8f6b5e;
+}
+
+.template-elegant .section-text {
+    color: #5e524b;
+
+    font-size: 11px;
+
+    line-height: 1.58;
+}
+
+.template-elegant .education-main h3,
+.template-elegant .project-item h3 {
+    color: #62483e;
+}
+
+.template-elegant .education-main p,
+.template-elegant .project-tech {
+    color: #75665f;
+
+    font-size: 10.5px;
+}
+
+.template-elegant .skills-container {
+    gap: 7px;
+}
+
+.template-elegant .skills-container span {
+    background: #ffffff;
+
+    color: #76564b;
+
+    border: 1px solid #d9c9bd;
+
+    border-radius: 12px;
+
+    padding: 5px 9px;
+
+    font-size: 9.5px;
+}
+
+.template-elegant .languages-container {
+    display: block;
+}
+
+.template-elegant .languages-container span {
+    display: block;
+
+    background: transparent;
+
+    border: none;
+
+    color: #5e524b;
+
+    padding: 3px 0;
+
+    border-radius: 0;
+
+    font-size: 10.5px;
+
+    justify-content: flex-start;
+}
+
+.template-elegant .qr-section {
+    border-left: 1px solid #dfd0c5;
+}
+
+.template-elegant .qr-content {
+    flex-direction: column;
+
+    align-items: center;
+
+    text-align: center;
+
+    gap: 10px;
+}
+
+.template-elegant .qr-code {
+    background: #ffffff;
+
+    border: 1px solid #d8c7bb;
+
+    padding: 7px;
+}
+
+.template-elegant .qr-section .section-title {
+    justify-content: center;
+
+    border-bottom: none;
+}
+
+
+/* Elegant achievements */
+
+.template-elegant .achievements-list {
+    padding-left: 17px;
+}
+
+.template-elegant .achievements-list li {
+    color: #5e524b;
+
+    font-size: 10.5px;
+
+    line-height: 1.45;
+}
+
+
+/* =========================================================
+   ACTION BUTTONS
+========================================================= */
+
+.preview-actions {
+    width: 210mm;
+
+    margin: 25px auto 0;
+
+    display: flex;
+
+    justify-content: center;
+
+    gap: 12px;
+
+    flex-wrap: wrap;
+}
+
+.ats-btn,
+.interview-btn {
+    border: none;
+
+    padding: 12px 18px;
+
+    border-radius: 9px;
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: 0.2s ease;
+}
+
+.ats-btn {
+    background: #173b63;
+
+    color: #ffffff;
+}
+
+.interview-btn {
+    background: #245f98;
+
+    color: #ffffff;
+}
+
+.ats-btn:hover,
+.interview-btn:hover {
+    transform: translateY(-1px);
+
+    opacity: 0.92;
+}
+
+
+/* =========================================================
+   ATS SECTION
+========================================================= */
+
+.ats-section {
+    width: 210mm;
+
+    margin: 25px auto;
+
+    padding: 25px;
+
+    background: #ffffff;
+
+    border-radius: 12px;
+
+    border: 1px solid #dce4ec;
+
+    box-shadow: 0 8px 25px rgba(15,23,42,0.08);
+
+    display: block;
+}
+
+.ats-section h2 {
+    margin: 0 0 18px;
+
+    color: #173b63;
+
+    font-size: 20px;
+}
+
+.ats-score-box {
+    display: flex;
+
+    align-items: center;
+
+    gap: 25px;
+}
+
+.ats-score {
+    width: 100px;
+    height: 100px;
+
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    flex-direction: column;
+
+    border: 7px solid #245f98;
+
+    background: #f7faff;
+
+    flex-shrink: 0;
+}
+
+.ats-score span {
+    font-size: 30px;
+
+    font-weight: 700;
+
+    color: #173b63;
+}
+
+.ats-score small {
+    font-size: 11px;
+
+    color: #64748b;
+}
+
+.ats-score-box p {
+    margin: 0;
+
+    color: #475569;
+
+    font-size: 13px;
+
+    line-height: 1.6;
+}
+
+.ats-suggestions {
+    margin-top: 20px;
+}
+
+
+/* =========================================================
+   INTERVIEW SECTION
+========================================================= */
+
+.interview-section {
+    width: 210mm;
+
+    margin: 25px auto 50px;
+
+    padding: 25px;
+
+    background: #ffffff;
+
+    border: 1px solid #dce4ec;
+
+    border-radius: 12px;
+
+    box-shadow: 0 8px 25px rgba(15,23,42,0.08);
+}
+
+.interview-section h2 {
+    margin: 0 0 8px;
+
+    color: #173b63;
+
+    font-size: 20px;
+}
+
+.interview-intro {
+    margin: 0 0 20px;
+
+    color: #64748b;
+
+    font-size: 13px;
+}
+
+
+/* =========================================================
+   MOBILE / TABLET
+========================================================= */
+
+@media (max-width: 900px) {
+
+    .preview-header {
+        padding: 0 15px;
+    }
+
+    .header-left,
+    .header-right {
+        width: auto;
+    }
+
+    .header-title {
+        font-size: 17px;
+    }
+
+    .preview-container {
+        padding: 20px 10px 40px;
+
+        overflow-x: auto;
+    }
+
+    .resume-paper,
+    .preview-actions,
+    .ats-section,
+    .interview-section {
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+
+/* =========================================================
+   PRINT / DOWNLOAD
+========================================================= */
+
+@media print {
+
+    body {
+        background: #ffffff;
+    }
+
+    .preview-header,
+    .preview-actions,
+    .ats-section,
+    .interview-section {
+        display: none !important;
+    }
+
+    .preview-container {
+        padding: 0;
+
+        overflow: visible;
+    }
+
+    .resume-paper {
+        width: 210mm;
+
+        min-height: 297mm;
+
+        margin: 0;
+
+        box-shadow: none;
+
+        border-radius: 0;
+    }
+
+    @page {
+        size: A4;
+
+        margin: 0;
+    }
+}
+/* =========================================================
+   FINAL SMALL CORRECTIONS
+   - Bigger readable font
+   - 2+ page support
+   - Social icon + text
+   - Reference-style alignment
+   - Reduce extra paragraph spacing
+   - Keep existing template designs unchanged
+========================================================= */
+
+
+/* =========================================================
+   1. MULTI-PAGE RESUME SUPPORT
+========================================================= */
+
+/* Do not cut content after first A4 page */
+.resume-paper {
+    overflow: visible;
+    min-height: 1123px;
+    height: auto;
+}
+
+
+/* Allow resume to naturally continue to page 2 */
+.resume-section,
+.qr-section {
+    break-inside: avoid;
+    page-break-inside: avoid;
+}
+
+
+/* Don't split individual education/project blocks */
+.education-item,
+.project-item,
+.skill-list,
+.language-list {
+    break-inside: avoid;
+    page-break-inside: avoid;
+}
+
+
+/* =========================================================
+   2. BIGGER + MORE READABLE FONT
+   Existing design/colors remain same
+========================================================= */
+
+.resume-section p,
+.resume-section li {
+    font-size: 14px;
+    line-height: 1.55;
+}
+
+.resume-section-title {
+    font-size: 16px;
+}
+
+.resume-section-title i {
+    font-size: 14px;
+}
+
+
+/* Classic */
+.template-classic .resume-header-info h1 {
+    font-size: 30px;
+}
+
+.template-classic .resume-header-info h2 {
+    font-size: 16px;
+}
+
+.template-classic .contact-info {
+    font-size: 13px;
+}
+
+
+/* Modern */
+.template-modern .resume-header-info h1 {
+    font-size: 29px;
+}
+
+.template-modern .resume-header-info h2 {
+    font-size: 15px;
+}
+
+.template-modern .contact-info {
+    font-size: 12.5px;
+}
+
+
+/* Elegant */
+.template-elegant .resume-header-info h1 {
+    font-size: 33px;
+}
+
+.template-elegant .resume-header-info h2 {
+    font-size: 15px;
+}
+
+.template-elegant .contact-info {
+    font-size: 12.5px;
+}
+
+.template-elegant .resume-section p,
+.template-elegant .resume-section li {
+    font-size: 13px;
+}
+
+
+/* =========================================================
+   3. SOCIAL LINKS
+   ICON + TEXT
+========================================================= */
+
+.social-links {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px 18px;
+}
+
+
+/* Important:
+   JS still controls whether the link is visible.
+   We only add the text visually.
+*/
+
+.social-links a {
+    display: flex !important;
+    align-items: center;
+    gap: 6px;
+
+    text-decoration: none;
+    white-space: nowrap;
+
+    font-weight: 500;
+}
+
+
+/* LinkedIn text */
+#previewLinkedIn::after {
+    content: "LinkedIn";
+}
+
+
+/* GitHub text */
+#previewGithub::after {
+    content: "GitHub";
+}
+
+
+/* Portfolio text */
+#previewPortfolio::after {
+    content: "Portfolio";
+}
+
+
+/* Social icon size */
+.social-links a i {
+    font-size: 15px;
+    flex-shrink: 0;
+}
+
+
+/* Classic social links */
+.template-classic .social-links {
+    justify-content: flex-start;
+    align-items: center;
+    gap: 12px 20px;
+}
+
+.template-classic .social-links a {
+    font-size: 13px;
+}
+
+
+/* Modern social links */
+.template-modern .social-links {
+    justify-content: flex-start;
+    align-items: center;
+    gap: 10px 18px;
+}
+
+.template-modern .social-links a {
+    font-size: 12px;
+}
+
+
+/* Elegant social links */
+.template-elegant .social-links {
+    justify-content: flex-start;
+    align-items: center;
+    gap: 10px 17px;
+}
+
+.template-elegant .social-links a {
+    font-size: 12px;
+}
+
+
+/* =========================================================
+   4. REDUCE EXTRA SPACE AFTER PARAGRAPHS
+   Especially Modern + Elegant
+========================================================= */
+
+.resume-section p {
+    margin-top: 4px;
+    margin-bottom: 6px;
+}
+
+
+/* Summary should not create huge empty space */
+#previewSummary {
+    margin-top: 3px;
+    margin-bottom: 5px;
+}
+
+
+/* Project description */
+#previewProjectDescription {
+    margin-top: 4px;
+    margin-bottom: 5px;
+}
+
+
+/* Modern spacing */
+.template-modern .resume-section {
+    margin-bottom: 8px;
+}
+
+.template-modern .resume-section p {
+    margin-bottom: 5px;
+}
+
+
+/* Elegant spacing */
+.template-elegant .resume-section {
+    margin-bottom: 8px;
+}
+
+.template-elegant .resume-section p {
+    margin-bottom: 5px;
+}
+
+
+/* Keep headings close to content */
+.resume-section-title {
+    margin-bottom: 9px;
+}
+
+
+/* =========================================================
+   5. BETTER CONTENT FLOW
+========================================================= */
+
+.education-item,
+.project-item {
+    margin-bottom: 8px;
+}
+
+
+/* Skills should stay compact */
+.skill-list,
+.language-list {
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+
+/* =========================================================
+   6. SOCIAL LINK LONG TEXT PROTECTION
+========================================================= */
+
+.social-links a {
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+
+/* =========================================================
+   7. PRINT / PDF
+   A4 + automatic page 2/page 3 when needed
+========================================================= */
+
+@media print {
+
+    body {
+        background: white !important;
+    }
+
+    .resume-paper {
+        width: 100% !important;
+
+        min-height: 0 !important;
+        height: auto !important;
+
+        margin: 0 !important;
+
+        box-shadow: none !important;
+
+        overflow: visible !important;
+    }
+
+
+    /* Let content naturally continue to page 2 */
+    .resume-section,
+    .qr-section {
+        break-inside: avoid;
+        page-break-inside: avoid;
+    }
+
+
+    /* Keep headings with their content */
+    .resume-section-title {
+        break-after: avoid;
+        page-break-after: avoid;
+    }
+
+
+    /* Don't cut these blocks */
+    .education-item,
+    .project-item,
+    .skill-list,
+    .language-list {
+        break-inside: avoid;
+        page-break-inside: avoid;
+    }
+
+
+    /* Hide preview controls */
+    .preview-header,
+    #downloadResumeBtn {
+        display: none !important;
+    }
+
+
+    @page {
+        size: A4;
+        margin: 0;
+    }
+}
+
+
+/* =========================================================
+   8. MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+    .social-links {
+        justify-content: center;
+        gap: 10px 15px;
+    }
+
+    .social-links a {
+        font-size: 12px;
+    }
+
+    .social-links a i {
+        font-size: 14px;
+    }
+
+    .resume-section p,
+    .resume-section li {
+        font-size: 13px;
+    }
+}
+/* =========================================
+   SHARE BUTTON
+========================================= */
+
+.share-btn {
+    background: #2f7fc4;
+    color: #ffffff;
+    border: none;
+    padding: 11px 18px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+
+    transition: all 0.25s ease;
+}
+
+.share-btn:hover {
+    background: #246da9;
+    transform: translateY(-1px);
+}
+
+.share-btn:active {
+    transform: translateY(0);
+}

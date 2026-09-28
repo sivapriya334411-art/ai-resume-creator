@@ -1,0 +1,791 @@
+/* =========================================
+   AI RESUME CREATOR
+   RESUME BUILDER CSS
+========================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f4f8fc;
+    color: #234b70;
+    line-height: 1.6;
+}
+
+
+/* =========================================
+   HEADER
+========================================= */
+
+.builder-header {
+    width: 100%;
+    height: 70px;
+    background: #ffffff;
+    border-bottom: 1px solid #dbeaf7;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 6%;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(20, 85, 160, 0.05);
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #1455a0;
+    font-size: 20px;
+    font-weight: 800;
+}
+
+.brand i {
+    font-size: 23px;
+    color: #1261b0;
+}
+
+.dashboard-link {
+    text-decoration: none;
+    color: #285d91;
+    font-size: 14px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 9px 15px;
+    border: 1px solid #cfe3f5;
+    border-radius: 8px;
+    transition: 0.3s ease;
+}
+
+.dashboard-link:hover {
+    background: #eaf5ff;
+    color: #1455a0;
+}
+
+
+/* =========================================
+   MAIN CONTAINER
+========================================= */
+
+.builder-container {
+    width: 92%;
+    max-width: 1050px;
+    margin: 0 auto;
+    padding: 45px 0 70px;
+}
+
+
+/* =========================================
+   PAGE TITLE
+========================================= */
+
+.page-title {
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+.page-title h1 {
+    color: #1455a0;
+    font-size: 32px;
+    font-weight: 800;
+    margin-bottom: 8px;
+}
+
+.page-title p {
+    color: #6b88a5;
+    font-size: 15px;
+}
+
+
+/* =========================================
+   FORM SECTION
+========================================= */
+
+.form-section {
+    background: #ffffff;
+    border: 1px solid #dbeaf7;
+    border-radius: 16px;
+    padding: 28px;
+    margin-bottom: 22px;
+    box-shadow: 0 5px 20px rgba(20, 85, 160, 0.05);
+}
+
+
+/* =========================================
+   SECTION HEADING
+========================================= */
+
+.section-heading {
+    display: flex;
+    align-items: center;
+    gap: 11px;
+    border-bottom: 1px solid #e2eff9;
+    padding-bottom: 13px;
+    margin-bottom: 23px;
+}
+
+.section-heading i {
+    width: 34px;
+    height: 34px;
+    border-radius: 9px;
+    background: #e7f3fd;
+    color: #1261b0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+}
+
+.section-heading h2 {
+    color: #155ca8;
+    font-size: 18px;
+    font-weight: 750;
+}
+
+
+/* =========================================
+   FORM GRID
+========================================= */
+
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.full-width {
+    grid-column: 1 / -1;
+}
+
+
+/* =========================================
+   FORM GROUP
+========================================= */
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    color: #285d91;
+    font-size: 14px;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+.form-group small {
+    color: #7a94ad;
+    font-size: 12px;
+    margin-top: 6px;
+}
+
+
+/* =========================================
+   INPUTS
+========================================= */
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+    width: 100%;
+    border: 1px solid #cbdfee;
+    border-radius: 9px;
+    padding: 12px 14px;
+    font-family: inherit;
+    font-size: 14px;
+    color: #234b70;
+    background: #ffffff;
+    outline: none;
+    transition: 0.25s ease;
+}
+
+.form-group input {
+    height: 45px;
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+.form-group select {
+    height: 45px;
+    cursor: pointer;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: #a0b4c7;
+}
+
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+    border-color: #5da5df;
+    box-shadow: 0 0 0 3px rgba(93, 165, 223, 0.12);
+}
+
+
+/* =========================================
+   PROFILE PHOTO
+========================================= */
+
+#profilePhoto {
+    height: auto;
+    padding: 10px;
+    background: #f9fcff;
+    cursor: pointer;
+}
+
+#profilePhoto::file-selector-button {
+    border: none;
+    background: #e5f1fc;
+    color: #1455a0;
+    padding: 8px 13px;
+    border-radius: 7px;
+    margin-right: 10px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+
+/* =========================================
+   AI BUTTON
+========================================= */
+
+.ai-button {
+    width: fit-content;
+    margin-top: 12px;
+    padding: 10px 17px;
+    border: none;
+    border-radius: 8px;
+    background: #1455a0;
+    color: #ffffff;
+    font-size: 13px;
+    font-weight: 700;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: 0.3s ease;
+}
+
+.ai-button:hover {
+    background: #0e4789;
+    transform: translateY(-1px);
+}
+
+.ai-button:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.ai-help-text {
+    color: #708ba5;
+    font-size: 12px;
+    margin-top: 7px;
+}
+
+
+/* =========================================
+   AI RESUME SUGGESTIONS
+========================================= */
+
+.ai-suggestion-box {
+    background: #f7fbff;
+    border: 1px solid #cfe5f7;
+    border-radius: 14px;
+    padding: 22px;
+}
+
+.ai-suggestion-intro {
+    margin: 0 0 16px;
+    color: #3e6f9e;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.ai-suggestions-result {
+    margin-top: 18px;
+    display: none;
+}
+
+.ai-suggestions-result.show {
+    display: block;
+}
+
+.suggestion-placeholder {
+    margin: 0;
+    padding: 14px 16px;
+    background: #ffffff;
+    border: 1px dashed #9ccaf2;
+    border-radius: 10px;
+    color: #6b88a5;
+    font-size: 14px;
+}
+
+.ai-suggestion-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    background: #ffffff;
+    border: 1px solid #d7e9f8;
+    border-radius: 10px;
+    padding: 13px 15px;
+    margin-bottom: 10px;
+    color: #285d91;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.ai-suggestion-item i {
+    color: #1261b0;
+    font-size: 15px;
+    margin-top: 3px;
+}
+
+.ai-suggestion-title {
+    font-weight: 700;
+    color: #1455a0;
+    margin-bottom: 10px;
+    font-size: 15px;
+}
+
+
+/* =========================================
+   LANGUAGES
+========================================= */
+
+.language-options {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.language-option {
+    min-width: 120px;
+    border: 1px solid #cfe3f5;
+    background: #f8fbfe;
+    border-radius: 9px;
+    padding: 11px 15px;
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    cursor: pointer;
+    color: #285d91;
+    font-size: 14px;
+    font-weight: 600;
+    transition: 0.25s ease;
+}
+
+.language-option:hover {
+    border-color: #7db7e5;
+    background: #eef8ff;
+}
+
+.language-option input {
+    accent-color: #1455a0;
+    width: 16px;
+    height: 16px;
+}
+
+
+/* =========================================
+   TEMPLATE GRID
+========================================= */
+
+.template-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.template-card {
+    position: relative;
+    display: block;
+    border: 2px solid #d8e8f5;
+    border-radius: 13px;
+    overflow: hidden;
+    background: #ffffff;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.template-card:hover {
+    transform: translateY(-3px);
+    border-color: #8bbde4;
+    box-shadow: 0 8px 20px rgba(20, 85, 160, 0.10);
+}
+
+.template-card input {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    width: 18px;
+    height: 18px;
+    z-index: 5;
+    accent-color: #1455a0;
+}
+
+.template-card:has(input:checked) {
+    border-color: #1455a0;
+    box-shadow: 0 0 0 2px rgba(20, 85, 160, 0.10);
+}
+
+.template-image {
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+    object-position: top;
+    display: block;
+    background: #f4f8fc;
+}
+
+.template-info {
+    padding: 13px 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+
+.template-info strong {
+    color: #1455a0;
+    font-size: 15px;
+}
+
+.template-info span {
+    color: #7893aa;
+    font-size: 12px;
+}
+
+
+/* =========================================
+   GENERATE RESUME
+========================================= */
+
+.generate-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 14px;
+    margin-top: 10px;
+}
+.save-button {
+    min-width: 180px;
+    padding: 14px 25px;
+    border: 1px solid #cfe3f5;
+    border-radius: 10px;
+    background: #ffffff;
+    color: #1455a0;
+    font-size: 15px;
+    font-weight: 750;
+    cursor: pointer;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 9px;
+
+    box-shadow: 0 5px 15px rgba(20, 85, 160, 0.08);
+    transition: all 0.3s ease;
+}
+
+.save-button i {
+    font-size: 15px;
+}
+
+.save-button:hover {
+    background: #f0f8ff;
+    border-color: #7db7e5;
+    color: #0e4789;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(20, 85, 160, 0.13);
+}
+
+.save-button:active {
+    transform: translateY(0);
+}
+.generate-button {
+    min-width: 230px;
+    padding: 14px 25px;
+    border: none;
+    border-radius: 10px;
+    background: #1455a0;
+    color: #ffffff;
+    font-size: 15px;
+    font-weight: 750;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 9px;
+    box-shadow: 0 7px 18px rgba(20, 85, 160, 0.20);
+    transition: 0.3s ease;
+}
+
+.generate-button:hover {
+    background: #0e4789;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 22px rgba(20, 85, 160, 0.25);
+}
+
+.generate-button:active {
+    transform: translateY(0);
+}
+/* =========================================
+   SAVE RESUME BUTTON
+========================================= */
+
+.save-button {
+    min-width: 180px;
+    padding: 14px 25px;
+    border: 1px solid #cfe3f5;
+    border-radius: 10px;
+    background: #ffffff;
+    color: #1455a0;
+    font-size: 15px;
+    font-weight: 750;
+    cursor: pointer;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 9px;
+
+    box-shadow: 0 5px 15px rgba(20, 85, 160, 0.08);
+    transition: all 0.3s ease;
+}
+
+.save-button i {
+    font-size: 15px;
+}
+
+.save-button:hover {
+    background: #f0f8ff;
+    border-color: #7db7e5;
+    color: #0e4789;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(20, 85, 160, 0.13);
+}
+
+.save-button:active {
+    transform: translateY(0);
+}
+
+
+/* =========================================
+   RESPONSIVE - TABLET
+========================================= */
+
+@media (max-width: 800px) {
+
+    .builder-header {
+        padding: 0 4%;
+    }
+
+    .builder-container {
+        width: 94%;
+        padding-top: 35px;
+    }
+
+    .template-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .template-image {
+        height: 350px;
+    }
+
+}
+
+
+/* =========================================
+   RESPONSIVE - MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+
+    .builder-header {
+        height: auto;
+        min-height: 65px;
+        padding: 12px 4%;
+    }
+
+    .brand {
+        font-size: 17px;
+    }
+
+    .brand i {
+        font-size: 20px;
+    }
+
+    .dashboard-link {
+        font-size: 12px;
+        padding: 8px 10px;
+    }
+
+    .builder-container {
+        width: 94%;
+        padding: 30px 0 50px;
+    }
+
+    .page-title {
+        margin-bottom: 25px;
+    }
+
+    .page-title h1 {
+        font-size: 25px;
+    }
+
+    .page-title p {
+        font-size: 13px;
+    }
+
+    .form-section {
+        padding: 20px 16px;
+        border-radius: 13px;
+    }
+
+    .section-heading {
+        margin-bottom: 19px;
+    }
+
+    .section-heading h2 {
+        font-size: 16px;
+    }
+
+    .form-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .full-width {
+        grid-column: auto;
+    }
+
+    .language-options {
+        flex-direction: column;
+    }
+
+    .language-option {
+        width: 100%;
+    }
+
+    .template-image {
+        height: 400px;
+    }
+
+    .generate-button {
+        width: 100%;
+    }
+
+}
+
+
+/* =========================================
+   VERY SMALL MOBILE
+========================================= */
+
+@media (max-width: 400px) {
+
+    .brand span {
+        font-size: 15px;
+    }
+
+    .dashboard-link {
+        padding: 7px 8px;
+    }
+
+    .dashboard-link i {
+        font-size: 11px;
+    }
+
+    .page-title h1 {
+        font-size: 22px;
+    }
+
+    .form-section {
+        padding: 17px 13px;
+    }
+
+    .section-heading h2 {
+        font-size: 15px;
+    }
+
+    .ai-button {
+        width: 100%;
+        justify-content: center;
+    }
+
+}
+
+
+/* =========================================
+   PRINT
+========================================= */
+
+@media print {
+
+    body {
+        background: white;
+    }
+
+    .builder-header {
+        display: none;
+    }
+
+    .builder-container {
+        width: 100%;
+        padding: 0;
+        margin: 0;
+    }
+
+    .form-section,
+    .page-title,
+    .generate-container {
+        display: none;
+    }
+
+}
+/* =========================================
+   SAVE RESUME BUTTON
+========================================= */
+
+.save-button {
+    min-width: 180px;
+    padding: 14px 25px;
+    border: none;
+    border-radius: 10px;
+    background: #2f7fc4;
+    color: #ffffff;
+    font-size: 15px;
+    font-weight: 750;
+    cursor: pointer;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 9px;
+
+    box-shadow: 0 7px 18px rgba(47, 127, 196, 0.20);
+    transition: all 0.3s ease;
+}
+
+.save-button:hover {
+    background: #246da9;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 22px rgba(47, 127, 196, 0.25);
+}
+
+.save-button:active {
+    transform: translateY(0);
+}

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>My Resumes - AI Resume Creator</title>
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <link rel="stylesheet" href="my-resumes.css">
+</head>
+
+<body>
+
+    <div class="page">
+
+        <!-- Sidebar -->
+        <aside class="sidebar">
+
+            <div class="logo">
+                <i class="fa-solid fa-file-lines"></i>
+                <span>AI Resume Creator</span>
+            </div>
+
+            <nav class="sidebar-nav">
+
+                <a href="dashboard.html">
+                    <i class="fa-solid fa-house"></i>
+                    <span>Dashboard</span>
+                </a>
+
+                <a href="my-resumes.html" class="active">
+                    <i class="fa-solid fa-file-lines"></i>
+                    <span>My Resumes</span>
+                </a>
+
+                <a href="#">
+                    <i class="fa-solid fa-gear"></i>
+                    <span>Settings</span>
+                </a>
+
+            </nav>
+
+            <div class="sidebar-bottom">
+
+                <a href="index.html">
+                    <i class="fa-solid fa-right-from-bracket"></i>
+                    <span>Logout</span>
+                </a>
+
+            </div>
+
+        </aside>
+
+
+        <!-- Main Content -->
+        <main class="main-content">
+
+            <div class="top-section">
+
+                <div>
+                    <h1>My Resumes</h1>
+                    <p>Manage and edit your created resumes.</p>
+                </div>
+
+                <a href="resume-builder.html" class="create-btn">
+                    <i class="fa-solid fa-plus"></i>
+                    Create New Resume
+                </a>
+
+            </div>
+
+
+            <!-- Resume Card -->
+            <section class="resume-section">
+
+                <div class="section-title">
+                    <h2>Your Resumes</h2>
+                </div>
+
+                <div id="resumeList">
+
+                    <div class="empty-resumes">
+
+                        <div class="empty-icon">
+                            <i class="fa-solid fa-file-circle-plus"></i>
+                        </div>
+
+                        <h3>No resumes yet</h3>
+
+                        <p>
+                            Create your first professional resume
+                            to see it here.
+                        </p>
+
+                        <a href="resume-builder.html" class="create-btn">
+                            <i class="fa-solid fa-plus"></i>
+                            Create Resume
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+        </main>
+
+    </div>
+
+    <script src="my-resumes.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Login | AI Resume Creator</title>
+
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <!-- Login CSS -->
+    <link rel="stylesheet" href="login.css">
+</head>
+
+<body>
+
+    <!-- =========================
+         TOP STATUS BAR
+    ========================== -->
+    <div class="status-bar">
+
+        <div class="status-time" id="statusTime">
+            09:41
+        </div>
+
+        <div class="status-icons">
+
+            <i class="fa-solid fa-signal"></i>
+
+            <i class="fa-solid fa-wifi"></i>
+
+            <div class="battery">
+                <div class="battery-body">
+                    <div class="battery-level"></div>
+                </div>
+                <div class="battery-tip"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- =========================
+         MAIN LOGIN AREA
+    ========================== -->
+    <main class="login-container">
+
+        <div class="login-card">
+
+            <!-- Logo -->
+            <div class="logo-section">
+
+                <div class="logo-icon">
+                    <i class="fa-solid fa-file-signature"></i>
+                </div>
+
+                <h1>AI Resume Creator</h1>
+
+                <p>
+                    Create a professional resume with ease
+                </p>
+
+            </div>
+
+
+            <!-- Login Heading -->
+            <div class="login-heading">
+
+                <h2>Welcome Back</h2>
+
+                <p>
+                    Login to continue to your account
+                </p>
+
+            </div>
+
+
+            <!-- =========================
+                 LOGIN FORM
+            ========================== -->
+            <form id="loginForm">
+
+                <!-- Email -->
+                <div class="input-group">
+
+                    <label for="email">
+                        Email Address
+                    </label>
+
+                    <div class="input-box">
+
+                        <i class="fa-regular fa-envelope input-icon"></i>
+
+                        <input
+                            type="email"
+                            id="email"
+                            name="email"
+                            placeholder="Enter your email"
+                            autocomplete="email"
+                            required
+                        >
+
+                    </div>
+
+                </div>
+
+
+                <!-- Password -->
+                <div class="input-group">
+
+                    <label for="password">
+                        Password
+                    </label>
+
+                    <div class="input-box">
+
+                        <i class="fa-solid fa-lock input-icon"></i>
+
+                        <input
+                            type="password"
+                            id="password"
+                            name="password"
+                            placeholder="Enter your password"
+                            autocomplete="current-password"
+                            required
+                        >
+
+                        <button
+                            type="button"
+                            class="password-toggle"
+                            id="togglePassword"
+                            aria-label="Show password"
+                        >
+                            <i class="fa-regular fa-eye"></i>
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Remember + Forgot -->
+                <div class="login-options">
+
+                    <label class="remember-me">
+
+                        <input
+                            type="checkbox"
+                            id="rememberMe"
+                        >
+
+                        <span>Remember me</span>
+
+                    </label>
+
+                    <a href="#" class="forgot-password">
+                        Forgot Password?
+                    </a>
+
+                </div>
+
+
+                <!-- Login Button -->
+                <button
+                    type="submit"
+                    class="login-button"
+                    id="loginButton"
+                >
+
+                    <span>Login</span>
+
+                    <i class="fa-solid fa-arrow-right"></i>
+
+                </button>
+
+            </form>
+
+
+            <!-- Divider -->
+            <div class="divider">
+
+                <span>or</span>
+
+            </div>
+
+
+            <!-- Create Account -->
+            <div class="create-account">
+
+                <p>
+                    Don't have an account?
+                    <a href="#" id="createAccount">
+                        Create Account
+                    </a>
+                </p>
+
+            </div>
+
+
+            <!-- Footer -->
+            <div class="login-footer">
+
+                <i class="fa-solid fa-shield-halved"></i>
+
+                <span>
+                    Your information is securely protected
+                </span>
+
+            </div>
+
+        </div>
+
+    </main>
+
+
+    <!-- =========================
+         JAVASCRIPT
+    ========================== -->
+    <script>
+
+        /* =========================
+           LIVE TIME
+        ========================== */
+
+        function updateTime() {
+
+            const timeElement =
+                document.getElementById("statusTime");
+
+            const now = new Date();
+
+            let hours = now.getHours();
+            let minutes = now.getMinutes();
+
+            hours =
+                hours.toString().padStart(2, "0");
+
+            minutes =
+                minutes.toString().padStart(2, "0");
+
+            timeElement.textContent =
+                hours + ":" + minutes;
+        }
+
+        updateTime();
+
+        setInterval(updateTime, 1000);
+
+
+        /* =========================
+           SHOW / HIDE PASSWORD
+        ========================== */
+
+        const togglePassword =
+            document.getElementById("togglePassword");
+
+        const passwordInput =
+            document.getElementById("password");
+
+        togglePassword.addEventListener(
+            "click",
+            function () {
+
+                const icon =
+                    togglePassword.querySelector("i");
+
+                if (passwordInput.type === "password") {
+
+                    passwordInput.type = "text";
+
+                    icon.classList.remove(
+                        "fa-eye"
+                    );
+
+                    icon.classList.add(
+                        "fa-eye-slash"
+                    );
+
+                } else {
+
+                    passwordInput.type = "password";
+
+                    icon.classList.remove(
+                        "fa-eye-slash"
+                    );
+
+                    icon.classList.add(
+                        "fa-eye"
+                    );
+                }
+
+            }
+        );
+
+
+        /* =========================
+           LOGIN
+        ========================== */
+
+        const loginForm =
+            document.getElementById("loginForm");
+
+        const loginButton =
+            document.getElementById("loginButton");
+
+        loginForm.addEventListener(
+            "submit",
+            function (event) {
+
+                event.preventDefault();
+
+                const email =
+                    document.getElementById("email").value.trim();
+
+                const password =
+                    document.getElementById("password").value.trim();
+
+                if (email === "") {
+
+                    alert("Please enter your email address.");
+
+                    return;
+                }
+
+                if (password === "") {
+
+                    alert("Please enter your password.");
+
+                    return;
+                }
+
+
+                /* Button loading */
+
+                loginButton.innerHTML =
+                    '<i class="fa-solid fa-spinner fa-spin"></i> ' +
+                    '<span>Logging in...</span>';
+
+                loginButton.disabled = true;
+
+
+                /* Temporary login flow */
+
+                setTimeout(function () {
+
+                    window.location.href =
+                        "dashboard.html";
+
+                }, 800);
+
+            }
+        );
+
+
+        /* =========================
+           CREATE ACCOUNT
+        ========================== */
+
+        document
+            .getElementById("createAccount")
+            .addEventListener(
+                "click",
+                function (event) {
+
+                    event.preventDefault();
+
+                    alert(
+                        "Account creation feature will be added soon."
+                    );
+
+                }
+            );
+
+
+        /* =========================
+           FORGOT PASSWORD
+        ========================== */
+
+        document
+            .querySelector(".forgot-password")
+            .addEventListener(
+                "click",
+                function (event) {
+
+                    event.preventDefault();
+
+                    alert(
+                        "Password recovery feature will be added soon."
+                    );
+
+                }
+            );
+
+    </script>
+
+</body>
+</html>

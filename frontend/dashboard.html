@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Dashboard | AI Resume Creator</title>
+
+    <link rel="stylesheet" href="dashboard.css">
+</head>
+
+
+<body>
+
+    <!-- =========================
+         SIDEBAR
+    ========================== -->
+
+    <aside class="sidebar">
+
+        <!-- Logo / Brand -->
+
+        <div class="brand">
+
+            <div class="brand-icon">
+
+                <!-- Professional Resume + AI Logo -->
+
+                <svg
+                    class="resume-logo"
+                    viewBox="0 0 48 48"
+                    xmlns="http://www.w3.org/2000/svg"
+                >
+
+                    <!-- Resume Paper -->
+
+                    <rect
+                        x="8"
+                        y="5"
+                        width="29"
+                        height="38"
+                        rx="5"
+                        fill="white"
+                        stroke="currentColor"
+                        stroke-width="2.5"
+                    />
+
+                    <!-- Folded Corner -->
+
+                    <path
+                        d="M27 5V14H37"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2.5"
+                        stroke-linejoin="round"
+                    />
+
+                    <!-- Profile -->
+
+                    <circle
+                        cx="18"
+                        cy="20"
+                        r="3.5"
+                        fill="currentColor"
+                    />
+
+                    <path
+                        d="M14 27C14 24.8 15.8 23.5 18 23.5C20.2 23.5 22 24.8 22 27"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                    />
+
+                    <!-- Resume Lines -->
+
+                    <path
+                        d="M25 21H32"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                    />
+
+                    <path
+                        d="M25 27H32"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                    />
+
+                    <path
+                        d="M14 32H32"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                    />
+
+                    <path
+                        d="M14 37H27"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                    />
+
+                    <!-- AI Spark -->
+
+                    <path
+                        d="M39 25L40.4 28.6L44 30L40.4 31.4L39 35L37.6 31.4L34 30L37.6 28.6L39 25Z"
+                        fill="currentColor"
+                    />
+
+                </svg>
+
+            </div>
+
+
+            <span class="brand-name">
+                AI Resume Creator
+            </span>
+
+        </div>
+
+
+        <!-- Navigation -->
+
+        <nav class="navigation">
+
+
+            <!-- Dashboard -->
+
+            <a
+                href="dashboard.html"
+                class="nav-item active"
+            >
+
+                <span class="nav-icon">⌂</span>
+
+                <span>Dashboard</span>
+
+            </a>
+
+
+            <!-- My Resumes -->
+
+            <a
+                href="my-resumes.html"
+                class="nav-item"
+            >
+
+                <span class="nav-icon">▣</span>
+
+                <span>My Resumes</span>
+
+            </a>
+
+
+        <!-- Bottom Navigation -->
+
+        <div class="sidebar-bottom">
+
+
+            <!-- Settings -->
+
+            <a
+                href="#"
+                class="nav-item"
+            >
+
+                <span class="nav-icon">⚙</span>
+
+                <span>Settings</span>
+
+            </a>
+
+
+            <!-- Logout -->
+
+            <a
+                href="index.html"
+                class="nav-item logout"
+            >
+
+                <span class="nav-icon">↪</span>
+
+                <span>Logout</span>
+
+            </a>
+
+        </div>
+
+    </aside>
+
+
+
+    <!-- =========================
+         MAIN CONTENT
+    ========================== -->
+
+    <main class="main-content">
+
+
+        <!-- Top Header -->
+
+        <header class="topbar">
+
+
+            <div class="page-title">
+
+                <h1>
+                    Dashboard
+                </h1>
+
+                <p>
+                    Manage your professional resumes
+                </p>
+
+            </div>
+
+
+            <!-- User -->
+
+            <div class="profile">
+
+                <div class="profile-circle">
+                    U
+                </div>
+
+                <div class="profile-info">
+
+                    <span class="profile-name">
+                        User
+                    </span>
+
+                    <span class="profile-role">
+                        Resume Creator
+                    </span>
+
+                </div>
+
+            </div>
+
+        </header>
+
+
+
+        <!-- =========================
+             WELCOME CARD
+        ========================== -->
+
+        <section class="welcome-card">
+
+
+            <div class="welcome-content">
+
+                <span class="welcome-label">
+                    AI RESUME CREATOR
+                </span>
+
+                <h2>
+                    Build a Resume That<br>
+                    Represents You.
+                </h2>
+
+                <p>
+                    Create a clean, professional resume
+                    with AI-powered assistance.
+                </p>
+
+            </div>
+
+
+            <div class="welcome-action">
+
+                <a
+                    href="resume-builder.html"
+                    class="create-btn"
+                >
+
+                    <span class="plus">
+                        +
+                    </span>
+
+                    Create New Resume
+
+                </a>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================
+             QUICK FEATURES
+        ========================== -->
+
+        <section class="features-section">
+
+
+            <div class="section-heading">
+
+                <div>
+
+                    <h2>
+                        Quick Features
+                    </h2>
+
+                    <p>
+                        Tools to help you create a better resume
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="feature-grid">
+
+
+                <!-- AI Generation -->
+
+                <div class="feature-card">
+
+                    <div class="feature-icon">
+                        <span>✦</span>
+                    </div>
+
+                    <h3>
+                        AI Resume Generation
+                    </h3>
+
+                    <p>
+                        Generate professional resume content
+                        with AI assistance.
+                    </p>
+
+                </div>
+
+
+
+                <!-- ATS -->
+
+                <div class="feature-card">
+
+                    <div class="feature-icon">
+                        <span>◎</span>
+                    </div>
+
+                    <h3>
+                        ATS Score
+                    </h3>
+
+                    <p>
+                        Check your resume's ATS compatibility
+                        and improve its quality.
+                    </p>
+
+                </div>
+
+
+
+                <!-- Templates -->
+
+                <div class="feature-card">
+
+                    <div class="feature-icon">
+                        <span>▤</span>
+                    </div>
+
+                    <h3>
+                        Professional Templates
+                    </h3>
+
+                    <p>
+                        Choose a clean and professional
+                        resume template.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+    </main>
+    <script src="dashboard.js"></script>
+</body>
+
+</html>
