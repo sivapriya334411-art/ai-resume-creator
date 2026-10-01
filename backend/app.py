@@ -6,7 +6,12 @@ import uuid
 import os
 
 app = Flask(__name__)
-CORS(app)
+CORS(
+    app,
+    resources={r"/*": {"origins": "*"}},
+    allow_headers=["Content-Type"],
+    methods=["GET", "POST", "OPTIONS"]
+)
 
 DATABASE_URL = os.environ.get("DATABASE_URL")
 
